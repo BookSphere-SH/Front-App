@@ -1,0 +1,25 @@
+<div *ngIf="publishedBook" class="container">
+  <div class="book-detail-row">
+    <div class="col-md-6 text-center">
+      <img [src]="publishedBook.portada" class="published-book-cover">
+    </div>
+    <div class="details-published-book">
+      <h3>Title: {{ publishedBook.titulo }}</h3>
+      <h4>Author: {{ publishedBook.autor }}</h4>
+      <p>Categories: {{ publishedBook.categorias }}</p>
+      <p class="description">Description: {{ publishedBook.descripcion }}</p>
+      <p>Price: {{ publishedBook.precio }}</p>
+      <p>Formats: {{ publishedBook.formato }}</p>
+    </div>
+  </div>
+
+  <div class="button-actions-container">
+    <button>Statistics</button>
+    <button>Promote</button>
+  </div>
+
+  <!-- Seccion Comentarios -->
+  <div class="comments-section">
+    <app-published-book-comments></app-published-book-comments>
+  </div>
+</div>
