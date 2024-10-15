@@ -1,0 +1,44 @@
+<div class="published-book-info">
+  <mat-form-field>
+    <mat-label>Title</mat-label>
+    <input matInput [(ngModel)]="publishedBook.titulo" placeholder="Enter the title of your book">
+  </mat-form-field>
+  <br>
+
+  <mat-form-field>
+    <mat-label>Author</mat-label>
+    <input matInput [(ngModel)]="publishedBook.autor" placeholder="Enter the author's name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Categories</mat-label>
+    <mat-select [formControl]="categories" multiple>
+      <mat-select-trigger>
+        {{categories.value?.[0] || ''}}
+        @if ((categories.value?.length || 0) > 1) {
+          <span class="categories-selection">
+          (+{{(categories.value?.length || 0) - 1}} {{categories.value?.length === 2 ? 'other' : 'others'}})
+        </span>
+        }
+      </mat-select-trigger>
+      @for (categories of categoryList; track categories) {
+        <mat-option [value]="categories">{{categories}}</mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+  <br>
+
+  <mat-form-field>
+    <mat-label>Description</mat-label>
+    <textarea matInput [(ngModel)]="publishedBook.descripcion" placeholder="Write a brief description of the book"></textarea>
+  </mat-form-field>
+  <br>
+
+  <mat-form-field>
+    <mat-label>Cost</mat-label>
+    <input matInput [(ngModel)]="publishedBook.precio" placeholder="Enter the cost of your book">
+  </mat-form-field>
+  <br>
+
+  <button (click)="sendPublishedBook()">Save</button>
+</div>
