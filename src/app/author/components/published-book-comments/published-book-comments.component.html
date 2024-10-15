@@ -1,0 +1,42 @@
+<div>
+  <div class="comments-section">
+    <h3>Comentarios:</h3>
+
+    <!-- Lista de comentarios -->
+    <div *ngFor="let comment of publishedBook.comments" class="comment-card">
+      <h5>{{ comment.username }}</h5>
+      <p><strong>Date: </strong> {{ comment.date }}</p>
+      <p><strong>Content: </strong>{{ comment.content }}</p>
+      <p><strong>Rating: </strong> {{ comment.rating }}/5</p>
+
+      <!-- Ícono de opciones para reportar -->
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="menu-actions">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>warning</mat-icon>
+          <span>Report</span>
+        </button>
+      </mat-menu>
+
+      <div class="button-answer-container">
+        <!-- Botón de responder -->
+        <button class="button-answer" (click)="responderComentario(comment)">
+          Responder
+        </button>
+
+        <!-- Caja de texto para la respuesta, se muestra solo si 'mostrandoRespuesta' es true -->
+        <div *ngIf="comment.mostrandoRespuesta" class="response-box">
+          <textarea class="text-content" [(ngModel)]="comment.respuesta" rows="2" placeholder="Escribe tu respuesta..."></textarea>
+          <button class="send-answer-button" (click)="enviarRespuesta(comment)">Enviar respuesta</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Si no hay comentarios -->
+    <div *ngIf="publishedBook?.comments?.length === 0" class="no-comments-section">
+      No hay comentarios disponibles para este libro.
+    </div>
+  </div>
+</div>
