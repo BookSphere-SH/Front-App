@@ -8,8 +8,8 @@ import { catchError, Observable, retry, throwError } from "rxjs";
 })
 
 export class BaseService<T> {
-  basePath: string = `${environment.serverBasePath}`;
-  resourceEndpoint: string = '/resources';
+  protected apiUrl: string;  // Definir apiUrl en la clase base
+  protected resourceEndpoint: string = '';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -17,7 +17,9 @@ export class BaseService<T> {
     })
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(protected http: HttpClient) {
+    this.apiUrl = 'http://localhost:3000/api/v1';
+  }
 
   handleError(error: HttpErrorResponse) {
     // Default error handling
@@ -55,6 +57,6 @@ export class BaseService<T> {
   }
 
   private resourcePath(): string {
-    return `${this.basePath}${this.resourceEndpoint}`;
+    return `${this.apiUrl}${this.resourceEndpoint}`;
   }
 }
