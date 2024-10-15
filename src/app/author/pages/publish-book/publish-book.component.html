@@ -1,0 +1,46 @@
+<mat-stepper labelPosition="bottom" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Enter book data</ng-template>
+
+      <div class="container">
+        <app-upload-book-cover></app-upload-book-cover>
+        <app-details-publish-book
+        (publishedBookEmitter)="publishedBookRecieved($event)"
+        ></app-details-publish-book>
+      </div>
+
+      <div class="button-next">
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Select format</ng-template>
+      <div>
+        <app-select-format-published-book
+        (formatSelectedEmitter)="formatPublishedBookRecived($event)"
+        ></app-select-format-published-book>
+      </div>
+      <div class="button-container-2">
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <div class="stepper-container-3">
+      <h3>Congratulations!</h3>
+      <p>Your book has been published</p>
+    </div>
+    <div class="button-container-3">
+      <button mat-button matStepperPrevious>Back</button>
+      <button class="publish-button" mat-raised-button color="primary" (click)="publishBook()">Publish</button>
+    </div>
+  </mat-step>
+</mat-stepper>
+
