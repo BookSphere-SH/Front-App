@@ -9,6 +9,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from "@angular/material/divider";
 import { MatListModule } from "@angular/material/list";
+import { MatMenuModule } from "@angular/material/menu";
 import { TranslateService } from "@ngx-translate/core";
 import { LanguageSwitcherComponent } from "./public/components/language-switcher/language-switcher.component";
 
@@ -16,7 +17,7 @@ import { LanguageSwitcherComponent } from "./public/components/language-switcher
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, RouterLink, MatToolbarModule, MatButtonModule, MatIconModule,
-    MatSidenavModule, MatDividerModule, MatListModule, LanguageSwitcherComponent],
+    MatSidenavModule, MatDividerModule, MatListModule, LanguageSwitcherComponent, MatMenuModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
