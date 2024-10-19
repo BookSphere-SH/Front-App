@@ -1,29 +1,42 @@
-/* Contenedor principal para ambos componentes */
 .container {
   display: flex;
-  justify-content: space-between; /* Distribuye los elementos hijos */
-  align-items: flex-start; /* Alinea los componentes en la parte superior */
-  gap: 20px; /* Espacio entre el contenedor de la imagen y el formulario */
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
   width: 100%;
   box-sizing: border-box;
   padding: 20px;
 }
 
-/* Estilo para centrar el botón Next */
-.button-next {
+.button-next-container {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+}
+
+.button-next {
+  background-color: #e04e0b;
+  color: white;
 }
 
 .button-container-2 {
   position: fixed;
   bottom: 20px;
   display: flex;
-  left: 50%; /* Coloca el elemento en el centro horizontal */
-  transform: translateX(-50%); /* Ajusta para que el centro del contenedor coincida con el centro de la pantalla */
+  left: 50%;
+  transform: translateX(-50%);
   justify-content: center;
-  gap: 10px; /* Espacio entre los botones */
+  gap: 10px;
+}
+
+.button-back-2 {
+  background-color: #e04e0b;
+  color: white;
+}
+
+.button-next-2 {
+  background-color: #e04e0b;
+  color: white;
 }
 
 .stepper-container-3 {
@@ -35,8 +48,18 @@
   position: fixed;
   bottom: 20px;
   display: flex;
-  left: 50%; /* Coloca el elemento en el centro horizontal */
-  transform: translateX(-50%); /* Ajusta para que el centro del contenedor coincida con el centro de la pantalla */
+  left: 50%;
+  transform: translateX(-50%);
   justify-content: center;
-  gap: 10px; /* Espacio entre los botones */
+  gap: 10px;
+}
+
+.button-back-3 {
+  background-color: #e04e0b;
+  color: white;
+}
+
+.publish-button {
+  background-color: #e04e0b;
+  color: white;
 }

@@ -10,8 +10,8 @@
         ></app-details-publish-book>
       </div>
 
-      <div class="button-next">
-        <button mat-button matStepperNext>Next</button>
+      <div class="button-next-container">
+        <button mat-button matStepperNext class="button-next">Next</button>
       </div>
     </form>
 
@@ -25,8 +25,8 @@
         ></app-select-format-published-book>
       </div>
       <div class="button-container-2">
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button matStepperPrevious class="button-back-2">Back</button>
+        <button mat-button matStepperNext class="button-next-2">Next</button>
       </div>
     </form>
   </mat-step>
@@ -38,7 +38,7 @@
       <p>Your book has been published</p>
     </div>
     <div class="button-container-3">
-      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperPrevious class="button-back-3">Back</button>
       <button class="publish-button" mat-raised-button color="primary" (click)="publishBook()">Publish</button>
     </div>
   </mat-step>
