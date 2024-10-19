@@ -9,7 +9,7 @@
     </label>
   </div>
 
-  <!-- Mostrar mensajes basados en la selección -->
+  <!-- Selección de formatos -->
   <div class="Select-formats"></div>
   @if (selectedFormats.length > 0) {
       @if (isPhysicalSelected() && isDigitalSelected()) {
@@ -30,6 +30,6 @@
     }
   </div>
 
-  <button (click)="sendFormatsBook()">Save</button>
+  <button class="save-button" (click)="sendFormatsBook()">Save</button>
 </div>
 
