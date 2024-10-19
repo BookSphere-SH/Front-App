@@ -27,11 +27,20 @@
 }
 
 /* Alinear el botón de opciones (menu) a la derecha */
-.comment-card mat-icon-button {
+.comment-card .menu-actions {
   position: absolute;
   top: 10px;
   right: 10px;
   z-index: 10; /* Asegura que el ícono esté por encima del contenido */
+}
+
+/* Estilo para el botón Eliminate */
+.eliminate-button {
+  color: red; /* Cambia el color del texto a rojo */
+}
+
+.eliminate-icon {
+  color: red;
 }
 
 /* Botón de responder alineado debajo del comentario */
@@ -44,7 +53,7 @@
 .button-answer {
   align-self: flex-start; /* El botón de respuesta estará alineado a la izquierda */
   margin-top: 1rem;
-  background-color: #007bff;
+  background-color: #e4864f;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -54,7 +63,7 @@
 }
 
 .button-answer:hover {
-  background-color: #0056b3; /* Cambia el color en hover */
+  background-color: #e04e0b; /* Cambia el color en hover */
 }
 
 /* Estilo para la caja de texto de respuesta */
@@ -75,17 +84,19 @@
 /* Botón de enviar respuesta */
 .send-answer-button {
   margin-top: 0.5rem;
-  background-color: #28a745;
+  background-color: #6e4945;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 20%;
+  margin-left: 55rem;
 }
 
 .send-answer-button:hover {
-  background-color: #218838;
+  background-color: #3E2723;
 }
 
 /* Estilos para la sección sin comentarios */

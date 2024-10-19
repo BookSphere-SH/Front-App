@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { PublishedBooksService } from "../../services/published-books.service";
 import { PublishedBook } from "../../model/published-book.entity";
 import { CommonModule } from '@angular/common';
@@ -7,22 +7,26 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from "@angular/material/menu";
 import { FormsModule } from "@angular/forms";
 import { MatButtonModule } from "@angular/material/button";
+import { ReportCommentComponent } from "../report-comment/report-comment.component";
+import { MatDialog, MatDialogModule} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-published-book-comments',
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatMenuModule, FormsModule, MatButtonModule],
+  imports: [CommonModule, MatIconModule, MatMenuModule, FormsModule, MatButtonModule, ReportCommentComponent, MatDialogModule],
   templateUrl: './published-book-comments.component.html',
   styleUrl: './published-book-comments.component.css'
 })
 
 export class PublishedBookCommentsComponent implements OnInit {
-  publishedBook: any;
+  publishedBook: any = {
+    comments: []
+  };
 
   constructor(
     private publishedBooksService: PublishedBooksService,
     private route: ActivatedRoute,
-    private router: Router
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -42,16 +46,43 @@ export class PublishedBookCommentsComponent implements OnInit {
   // Método para enviar la respuesta
   enviarRespuesta(comment: any): void {
     if (comment.respuesta && comment.respuesta.trim()) {
-      console.log(`Respuesta enviada: ${comment.respuesta}`);
-      comment.mostrandoRespuesta = false;
+      if (!comment.respuestas) {
+        comment.respuestas = []; // Inicializa el arreglo si no existe
+      }
+      comment.respuestas.push(comment.respuesta); // Añade la respuesta al arreglo
+      comment.respuesta = ''; // Limpia el campo de respuesta
+      comment.mostrandoRespuesta = false; // Oculta la caja de respuesta después de enviar
     } else {
-      alert("Por favor escriba una respuesta antes de enviar.")
+      alert("Please write a response before submitting.");
     }
   }
 
   // Método para reportar un comentario
   reportarComentario(comment: any): void {
-    console.log(`Comentario reportado: ${comment.content}`);
-    alert('Has reportado este comentario como ofensivo o spam.');
+    const dialogRef = this.dialog.open(ReportCommentComponent, {
+      width: '400px',  // Puedes ajustar el tamaño
+      data: {
+        commentContent: comment.content
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log(`Comment reported by the reason: ${result}`);
+        alert('You have reported this comment as: ' + result);
+      }
+    });
+  }
+
+  // Método para eliminar un comentario
+  eliminarComentario(comment: any): void {
+    const confirmacion = confirm('Are you sure you want to delete this comment?');
+    if (confirmacion && this.publishedBook?.comments) {
+      const index = this.publishedBook.comments.indexOf(comment);
+      if (index > -1) {
+        this.publishedBook.comments.splice(index, 1);  // Elimina el comentario de la lista
+        console.log('Comment deleted.');
+      }
+    }
   }
 }
