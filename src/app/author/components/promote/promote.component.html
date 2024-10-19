@@ -1,1 +1,22 @@
-<p>promote works!</p>
+<div class="promote-section">
+  <h2><strong>Promote Your Book</strong></h2>
+
+  <p class="description">Set a budget for your book to gain a greater presence within the store. The selected amount will determine the number of potential readers your promotion will reach.</p>
+
+  <div class="payment-info">
+    <p><strong>Selected Payment:</strong> ${{ value }}</p>
+    <p><strong>Potential Reach:</strong> {{ value * 10 }} readers</p>
+    <p><strong>Start Date:</strong> {{ startDate | date:'MMMM d, y' }}</p>
+    <p><strong>End date:</strong> {{ endDate | date:'MMMM d, y' }}</p>
+  </div>
+
+  <mat-slider
+    class="example-margin custom-slider"
+    [max]="500"
+    [min]="50"
+    [step]="10">
+    <input matSliderThumb [(ngModel)]="value" #slider>
+  </mat-slider>
+
+  <button mat-raised-button color="primary" class="promote-button" (click)="promoteBook()">Promote</button>
+</div>
