@@ -1,4 +1,5 @@
 import {Comment} from "./comment.entity";
+import { Statistics } from "./statistics.entity";
 
 export class PublishedBook {
   id: number;
@@ -11,6 +12,7 @@ export class PublishedBook {
   portada: string;
   comments: Comment[];
   promocionado: boolean;
+  statistics: Statistics[];
 
   constructor() {
     this.id = 0;
@@ -23,5 +25,6 @@ export class PublishedBook {
     this.portada = 'https://perpustakaan.pom.go.id/images/default/image.png';
     this.comments = [];
     this.promocionado = false;
+    this.statistics = [];
   }
 }
