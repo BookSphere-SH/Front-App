@@ -1,8 +1,11 @@
 <div *ngIf="publishedBook" class="container">
   <div class="book-detail-row">
+    <!-- Portada del libro -->
     <div class="col-md-6 text-center">
       <img [src]="publishedBook.portada" class="published-book-cover">
     </div>
+
+    <!-- Información del libro -->
     <div class="details-published-book">
       <h3>Title: {{ publishedBook.titulo }}</h3>
       <h4>Author: {{ publishedBook.autor }}</h4>
@@ -10,12 +13,13 @@
       <p class="description">Description: {{ publishedBook.descripcion }}</p>
       <p>Price: {{ publishedBook.precio }}</p>
       <p>Formats: {{ publishedBook.formato }}</p>
-    </div>
-  </div>
 
-  <div class="button-actions-container">
-    <button>Statistics</button>
-    <button>Promote</button>
+      <!-- Contenedor de botones de Stadistics y Promote -->
+      <div class="button-actions-container">
+        <button mat-flat-button class="statistics-button" [routerLink]="['/statistics', publishedBook.id]">Statistics</button>
+        <button mat-flat-button class="promote-button" [routerLink]="['/promote', publishedBook.id]">Promote</button>
+      </div>
+    </div>
   </div>
 
   <!-- Seccion Comentarios -->
