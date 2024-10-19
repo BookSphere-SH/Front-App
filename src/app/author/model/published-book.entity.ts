@@ -10,6 +10,7 @@ export class PublishedBook {
   formato: string[];
   portada: string;
   comments: Comment[];
+  promocionado: boolean;
 
   constructor() {
     this.id = 0;
@@ -21,5 +22,6 @@ export class PublishedBook {
     this.formato = [];
     this.portada = 'https://perpustakaan.pom.go.id/images/default/image.png';
     this.comments = [];
+    this.promocionado = false;
   }
 }
