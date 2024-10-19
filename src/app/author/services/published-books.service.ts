@@ -63,4 +63,9 @@ export class PublishedBooksService {
   updatePublishedBook(book: PublishedBook): Observable<PublishedBook> {
     return this.http.put<PublishedBook>(`${this.urlPublishedBooks}/${book.id}`, book);
   }
+
+  // Método para obtener las estadísticas
+  getStatisticsByBookId(id: number): Observable<PublishedBook> {
+    return this.http.get<PublishedBook>(`${this.urlPublishedBooks}/${id}/statistics`);
+  }
 }
