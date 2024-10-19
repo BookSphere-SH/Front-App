@@ -29,11 +29,6 @@ export class LibraryComponent implements OnInit{
     })
   }
 
-  updateLocalStorage() {
-    localStorage.setItem('library', JSON.stringify(this.library));
-    console.log('LocalStorage actualizado con la nueva lista de libros');
-  }
-
   goToDetails(publishedBookId: number): void {
     console.log('Redirigiendo a la página de detalles del libro publicado con ID:', publishedBookId);
     window.location.href = `/published-books/${publishedBookId}`;
