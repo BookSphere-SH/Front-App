@@ -1,0 +1,14 @@
+.statistics-container {
+  max-width: 800px;
+  margin: 30px auto;
+}
+
+.interested-readers-chart-container {
+  margin: 60px 0;
+  text-align: center;
+}
+
+.purchases-downloads-chart-container {
+  margin: 60px 0;
+  text-align: center;
+}
