@@ -59,4 +59,8 @@ export class PublishedBooksService {
       console.log('No books in library found in localStorage');
     }
   }*/
+
+  updatePublishedBook(book: PublishedBook): Observable<PublishedBook> {
+    return this.http.put<PublishedBook>(`${this.urlPublishedBooks}/${book.id}`, book);
+  }
 }
