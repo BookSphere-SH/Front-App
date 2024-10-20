@@ -1,9 +1,10 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { TranslateModule } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-select-format-published-book',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './select-format-published-book.component.html',
   styleUrl: './select-format-published-book.component.css'
 })

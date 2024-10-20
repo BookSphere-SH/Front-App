@@ -10,12 +10,13 @@ import {UploadBookCoverComponent} from "../../components/upload-book-cover/uploa
 import {SelectFormatPublishedBookComponent} from "../../components/select-format-published-book/select-format-published-book.component";
 import {PublishedBook} from "../../model/published-book.entity";
 import {PublishedBooksService} from "../../services/published-books.service";
+import {TranslateModule} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-publish-book',
   standalone: true,
   imports: [MatStepperModule, FormsModule, ReactiveFormsModule, MatFormFieldModule,
-    MatInputModule, MatButtonModule, RouterLink, DetailsPublishBookComponent, UploadBookCoverComponent, SelectFormatPublishedBookComponent, RouterLink],
+    MatInputModule, MatButtonModule, RouterLink, DetailsPublishBookComponent, UploadBookCoverComponent, SelectFormatPublishedBookComponent, RouterLink, TranslateModule],
   templateUrl: './publish-book.component.html',
   styleUrls: ['./publish-book.component.css']
 })

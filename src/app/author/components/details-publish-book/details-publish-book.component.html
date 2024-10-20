@@ -1,17 +1,17 @@
 <div class="published-book-info">
   <mat-form-field>
-    <mat-label>Title</mat-label>
-    <input matInput [(ngModel)]="publishedBook.titulo" placeholder="Enter the title of your book">
+    <mat-label>{{ 'detailsPublishBook.title' | translate }}</mat-label>
+    <input matInput [(ngModel)]="publishedBook.titulo" placeholder="{{ 'detailsPublishBook.titlePlaceHolder' | translate }}">
   </mat-form-field>
   <br>
 
   <mat-form-field>
-    <mat-label>Author</mat-label>
-    <input matInput [(ngModel)]="publishedBook.autor" placeholder="Enter the author's name">
+    <mat-label>{{ 'detailsPublishBook.author' | translate }}</mat-label>
+    <input matInput [(ngModel)]="publishedBook.autor" placeholder="{{ 'detailsPublishBook.authorPlaceHolder' | translate }}">
   </mat-form-field>
 
   <mat-form-field>
-    <mat-label>Categories</mat-label>
+    <mat-label>{{ 'detailsPublishBook.categories' | translate }}</mat-label>
     <mat-select [formControl]="categories" multiple>
       <mat-select-trigger>
         {{categories.value?.[0] || ''}}
@@ -29,16 +29,16 @@
   <br>
 
   <mat-form-field>
-    <mat-label>Description</mat-label>
-    <textarea matInput [(ngModel)]="publishedBook.descripcion" placeholder="Write a brief description of the book"></textarea>
+    <mat-label>{{ 'detailsPublishBook.description' | translate }}</mat-label>
+    <textarea matInput [(ngModel)]="publishedBook.descripcion" placeholder="{{ 'detailsPublishBook.descriptionPlaceHolder' | translate }}"></textarea>
   </mat-form-field>
   <br>
 
   <mat-form-field>
-    <mat-label>Cost</mat-label>
-    <input matInput [(ngModel)]="publishedBook.precio" placeholder="Enter the cost of your book">
+    <mat-label>{{ 'detailsPublishBook.cost' | translate }}</mat-label>
+    <input matInput [(ngModel)]="publishedBook.precio" placeholder="{{ 'detailsPublishBook.costPlaceHolder' | translate }}">
   </mat-form-field>
   <br>
 
-  <button class="save-button" (click)="sendPublishedBook()">Save</button>
+  <button class="save-button" (click)="sendPublishedBook()">{{ 'detailsPublishBook.saveButton' | translate }}</button>
 </div>

@@ -1,14 +1,15 @@
-import {Component, EventEmitter, OnDestroy, Output} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from "@angular/material/select";
-import {FormsModule, ReactiveFormsModule, FormGroup, FormControl} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule, FormControl} from "@angular/forms";
 import {PublishedBook} from "../../model/published-book.entity";
+import {TranslateModule} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-details-publish-book',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule, MatSelectModule],
+  imports: [MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule, MatSelectModule, TranslateModule],
   templateUrl: './details-publish-book.component.html',
   styleUrl: './details-publish-book.component.css'
 })

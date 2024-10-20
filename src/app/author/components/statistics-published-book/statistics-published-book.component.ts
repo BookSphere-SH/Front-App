@@ -3,11 +3,14 @@ import { ActivatedRoute } from "@angular/router";
 import { Chart, registerables } from "chart.js";
 import { PublishedBooksService } from "../../services/published-books.service";
 import { PublishedBook } from "../../model/published-book.entity";
+import { TranslateModule } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-statistics-published-book',
   standalone: true,
-  imports: [],
+  imports: [
+    TranslateModule
+  ],
   templateUrl: './statistics-published-book.component.html',
   styleUrl: './statistics-published-book.component.css'
 })

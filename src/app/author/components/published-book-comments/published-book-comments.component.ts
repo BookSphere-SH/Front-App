@@ -9,11 +9,12 @@ import { FormsModule } from "@angular/forms";
 import { MatButtonModule } from "@angular/material/button";
 import { ReportCommentComponent } from "../report-comment/report-comment.component";
 import { MatDialog, MatDialogModule} from "@angular/material/dialog";
+import { TranslateModule } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-published-book-comments',
   standalone: true,
-  imports: [CommonModule, MatIconModule, MatMenuModule, FormsModule, MatButtonModule, ReportCommentComponent, MatDialogModule],
+  imports: [CommonModule, MatIconModule, MatMenuModule, FormsModule, MatButtonModule, ReportCommentComponent, MatDialogModule, TranslateModule],
   templateUrl: './published-book-comments.component.html',
   styleUrl: './published-book-comments.component.css'
 })

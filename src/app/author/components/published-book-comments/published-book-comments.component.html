@@ -1,13 +1,13 @@
 <div>
   <div class="comments-section">
-    <h3>Comments:</h3>
+    <h3>{{ 'commentsBook.comments' | translate }}:</h3>
 
     <!-- Lista de comentarios -->
     <div *ngFor="let comment of publishedBook.comments" class="comment-card">
       <h5>{{ comment.username }}</h5>
-      <p><strong>Date: </strong> {{ comment.date }}</p>
-      <p><strong>Content: </strong>{{ comment.content }}</p>
-      <p><strong>Rating: </strong> {{ comment.rating }}/5</p>
+      <p><strong>{{ 'commentsBook.date' | translate }}: </strong> {{ comment.date }}</p>
+      <p><strong>{{ 'commentsBook.content' | translate }}: </strong>{{ comment.content }}</p>
+      <p><strong>{{ 'commentsBook.rating' | translate }}: </strong> {{ comment.rating }}/5</p>
 
       <!-- Ícono de opciones para reportar -->
       <div class="menu-actions">
@@ -17,11 +17,11 @@
         <mat-menu #menu="matMenu">
           <button mat-menu-item class="report-button" (click)="reportarComentario(comment)">
             <mat-icon>warning</mat-icon>
-            <span>Report</span>
+            <span>{{ 'commentsBook.reportButton' | translate }}</span>
           </button>
           <button mat-menu-item class="eliminate-button" (click)="eliminarComentario(comment)">
             <mat-icon class="eliminate-icon">dangerous</mat-icon>
-            <span>Eliminate</span>
+            <span>{{ 'commentsBook.eliminateButton' | translate }}</span>
           </button>
         </mat-menu>
       </div>
@@ -34,8 +34,8 @@
 
         <!-- Caja de texto para la respuesta, se muestra solo si 'mostrandoRespuesta' es true -->
         <div *ngIf="comment.mostrandoRespuesta" class="response-box">
-          <textarea class="text-content" [(ngModel)]="comment.respuesta" rows="2" placeholder="Write your answer..."></textarea>
-          <button class="send-answer-button" (click)="enviarRespuesta(comment)">Send answer</button>
+          <textarea class="text-content" [(ngModel)]="comment.respuesta" rows="2" placeholder="{{ 'commentsBook.respondPlaceHolder' | translate }}"></textarea>
+          <button class="send-answer-button" (click)="enviarRespuesta(comment)">{{ 'commentsBook.sendAnswerButton' | translate }}</button>
         </div>
       </div>
 
@@ -57,7 +57,7 @@
 
     <!-- Si no hay comentarios -->
     <div *ngIf="publishedBook?.comments?.length === 0" class="no-comments-section">
-      There aren't comments available for this book.
+      {{ 'commentsBook.noComments' | translate }}.
     </div>
   </div>
 </div>

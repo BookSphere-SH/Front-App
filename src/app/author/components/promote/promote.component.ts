@@ -8,11 +8,12 @@ import { PromotionService} from "../../services/promotion.service";
 import { PromotionItem } from "../../model/promotion-item.entity";
 import { PublishedBook } from "../../model/published-book.entity";
 import { PublishedBooksService } from "../../services/published-books.service";
+import { TranslateModule } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-promote',
   standalone: true,
-  imports: [MatSliderModule, MatButtonModule, FormsModule, DatePipe],
+  imports: [MatSliderModule, MatButtonModule, FormsModule, DatePipe, TranslateModule],
   templateUrl: './promote.component.html',
   styleUrl: './promote.component.css'
 })

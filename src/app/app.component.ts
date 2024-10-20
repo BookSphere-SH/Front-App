@@ -10,14 +10,14 @@ import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from "@angular/material/divider";
 import { MatListModule } from "@angular/material/list";
 import { MatMenuModule } from "@angular/material/menu";
-import { TranslateService } from "@ngx-translate/core";
+import {TranslateModule, TranslateService} from "@ngx-translate/core";
 import { LanguageSwitcherComponent } from "./public/components/language-switcher/language-switcher.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, RouterLink, MatToolbarModule, MatButtonModule, MatIconModule,
-    MatSidenavModule, MatDividerModule, MatListModule, LanguageSwitcherComponent, MatMenuModule],
+    MatSidenavModule, MatDividerModule, MatListModule, LanguageSwitcherComponent, MatMenuModule, TranslateModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

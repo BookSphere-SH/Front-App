@@ -4,12 +4,13 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatCardModule} from "@angular/material/card";
 import { PublishedBooksService } from "../../services/published-books.service";
 import { PublishedBook } from "../../model/published-book.entity";
+import { TranslateModule } from "@ngx-translate/core";
 
 
 @Component({
   selector: 'app-library',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatCardModule],
+  imports: [CommonModule, MatButtonModule, MatCardModule, TranslateModule],
   templateUrl: './library.component.html',
   styleUrls: ['./library.component.css']
 })

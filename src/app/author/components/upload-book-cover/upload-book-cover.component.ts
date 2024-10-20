@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { TranslateModule } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-upload-book-cover',
   standalone: true,
-  imports: [],
+  imports: [TranslateModule],
   templateUrl: './upload-book-cover.component.html',
   styleUrl: './upload-book-cover.component.css'
 })

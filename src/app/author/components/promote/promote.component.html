@@ -1,13 +1,13 @@
 <div class="promote-section">
-  <h2><strong>Promote Your Book</strong></h2>
+  <h2><strong>{{ 'promoteBook.promoteTitle' | translate }}</strong></h2>
 
-  <p class="description">Set a budget for your book to gain a greater presence within the store. The selected amount will determine the number of potential readers your promotion will reach.</p>
+  <p class="description">{{ 'promoteBook.promoteDescription' | translate }}</p>
 
   <div class="payment-info">
-    <p><strong>Selected Payment:</strong> ${{ value }}</p>
-    <p><strong>Potential Reach:</strong> {{ value * 10 }} readers</p>
-    <p><strong>Start Date:</strong> {{ startDate | date:'MMMM d, y' }}</p>
-    <p><strong>End date:</strong> {{ endDate | date:'MMMM d, y' }}</p>
+    <p><strong>{{ 'promoteBook.selectedPayment' | translate }}:</strong> ${{ value }}</p>
+    <p><strong>{{ 'promoteBook.estimatedReach' | translate }}:</strong> {{ value * 10 }} readers</p>
+    <p><strong>{{ 'promoteBook.startDate' | translate }}:</strong> {{ startDate | date:'MMMM d, y' }}</p>
+    <p><strong>{{ 'promoteBook.endDate' | translate }}:</strong> {{ endDate | date:'MMMM d, y' }}</p>
   </div>
 
   <mat-slider
@@ -18,5 +18,5 @@
     <input matSliderThumb [(ngModel)]="value" #slider>
   </mat-slider>
 
-  <button mat-raised-button color="primary" class="promote-button" (click)="promoteBook()">Promote</button>
+  <button mat-raised-button color="primary" class="promote-button" (click)="promoteBook()">{{ 'promoteBook.promoteButton' | translate }}</button>
 </div>

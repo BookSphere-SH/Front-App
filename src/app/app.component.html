@@ -4,13 +4,13 @@
 
   @for(option of options; track option.title) {
     @if(option.title === 'Store'){
-      <button mat-button [matMenuTriggerFor]="menuStore">{{ option.title }}</button>
+      <button mat-button [matMenuTriggerFor]="menuStore">{{ 'optionsMenu.store' | translate }}</button>
       <mat-menu #menuStore="matMenu">
-        <button mat-menu-item [routerLink]="['/store/store-books']">My Store</button>
-        <button mat-menu-item [routerLink]="['/publish-book']">Publish Book</button>
+        <button mat-menu-item [routerLink]="['/store/store-books']">{{ 'optionsStore.myStore' | translate }}</button>
+        <button mat-menu-item [routerLink]="['/publish-book']">{{ 'optionsStore.publishBook' | translate }}</button>
       </mat-menu>
     } @else {
-      <button mat-button [routerLink]="['/' + option.title.toLowerCase()]">{{ option.title }}</button>
+      <button mat-button [routerLink]="['/' + option.title.toLowerCase()]">{{ 'optionsMenu.' + option.title.toLowerCase() | translate }}</button>
     }
   }
 
