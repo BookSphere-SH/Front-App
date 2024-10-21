@@ -1,9 +1,7 @@
-/* Estilos para la sección de comentarios */
 .comments-section {
   margin-top: 2rem;
 }
 
-/* Estilos para cada comentario (card) */
 .comment-card {
   padding: 1rem;
   border: 1px solid #ddd;
@@ -16,17 +14,14 @@
   word-wrap: break-word;
 }
 
-/* Estilo para el título del comentario (nombre del usuario) */
 .comment-card h5 {
   margin-bottom: 0.5rem;
 }
 
-/* Estilo para las fechas y calificación */
 .comment-card p {
   margin-bottom: 0.3rem;
 }
 
-/* Alinear el botón de opciones (menu) a la derecha */
 .comment-card .menu-actions {
   position: absolute;
   top: 10px;
@@ -34,7 +29,6 @@
   z-index: 10;
 }
 
-/* Estilo para el botón Eliminate */
 .eliminate-button {
   color: red;
 }
@@ -43,7 +37,6 @@
   color: red;
 }
 
-/* Botón de responder alineado debajo del comentario */
 .button-answer-container {
   display: flex;
   flex-direction: column;
@@ -66,7 +59,6 @@
   background-color: #e04e0b;
 }
 
-/* Estilo para la caja de texto de respuesta */
 .response-box {
   margin-top: 1rem;
   display: flex;
@@ -81,7 +73,6 @@
   resize: none;
 }
 
-/* Botón de enviar respuesta */
 .send-answer-button {
   margin-top: 0.5rem;
   background-color: #6e4945;
@@ -99,7 +90,6 @@
   background-color: #3E2723;
 }
 
-/* Estilos para la sección sin comentarios */
 .no-comments-section {
   padding: 1rem;
   background-color: #e9ecef;

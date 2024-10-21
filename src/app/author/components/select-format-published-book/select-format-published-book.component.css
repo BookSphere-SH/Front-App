@@ -1,21 +1,17 @@
-/* Estilo para la sección del formulario */
 .form-group {
   text-align: center;
   margin: 20px;
 }
 
-/* Título principal */
 h3 {
   font-weight: bold;
   color: #333;
 }
 
-/* Contenedor de los checkboxes */
 .checkbox-container {
   margin: 15px 0;
 }
 
-/* Estilo para los checkboxes */
 .checkbox-container label {
   font-size: 18px;
   margin: 0 10px;
@@ -23,39 +19,33 @@ h3 {
   cursor: pointer;
 }
 
-/* Checkboxes personalizados */
 .checkbox-container input[type="checkbox"] {
   width: 20px;
   height: 20px;
   cursor: pointer;
 }
 
-/* Estilo cuando el checkbox está seleccionado */
 .checkbox-container input[type="checkbox"]:checked {
   background-color: #d2b48c;
   border: 2px solid #8b4513;
 }
 
-/* Estilo para los mensajes */
 .Select-formats p {
   font-size: 18px;
   color: #444;
   margin-top: 10px;
 }
 
-/* Estilo para la sección de subir archivo */
 .select-format-digital {
   margin-top: 15px;
   max-height: 200px;
 }
 
-/* Estilo para la etiqueta del archivo */
 .labelFile {
   font-size: 16px;
   color: #666;
 }
 
-/* Estilo del botón para subir archivo */
 .inputFile {
   font-size: 16px;
   padding: 8px;
