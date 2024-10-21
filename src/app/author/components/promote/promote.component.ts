@@ -5,7 +5,6 @@ import { MatButtonModule } from "@angular/material/button";
 import { FormsModule } from "@angular/forms";
 import { DatePipe } from "@angular/common";
 import { PromotionService} from "../../services/promotion.service";
-import { PromotionItem } from "../../model/promotion-item.entity";
 import { PublishedBook } from "../../model/published-book.entity";
 import { PublishedBooksService } from "../../services/published-books.service";
 import { TranslateModule } from "@ngx-translate/core";
@@ -19,14 +18,14 @@ import { TranslateModule } from "@ngx-translate/core";
 })
 
 export class PromoteComponent implements OnInit {
-  value: number = 100;  // Valor inicial del slider
+  value: number = 100;
   startDate: Date = new Date();
   endDate: Date = new Date();
-  selectedBook?: PublishedBook;  // El libro que se va a promocionar
+  selectedBook?: PublishedBook;
 
   constructor(
     private promotionService: PromotionService,
-    private publishedBooksService: PublishedBooksService,  // Servicio para obtener el libro
+    private publishedBooksService: PublishedBooksService,
     private route: ActivatedRoute,
     private router: Router
   ) {
@@ -34,11 +33,9 @@ export class PromoteComponent implements OnInit {
   }
 
   ngOnInit() {
-    // Obtener el ID del libro de la ruta
     const bookId = Number(this.route.snapshot.paramMap.get('id'));
 
     if (bookId) {
-      // Llamamos al servicio para obtener los detalles del libro seleccionado
       this.publishedBooksService.getPublishedBookById(bookId).subscribe(book => {
         this.selectedBook = book;
       });
@@ -47,7 +44,7 @@ export class PromoteComponent implements OnInit {
 
   calculateEndDate(): void {
     const endDate = new Date(this.startDate);
-    endDate.setDate(this.startDate.getDate() + 30);  // Ajustar los días según necesidad
+    endDate.setDate(this.startDate.getDate() + 30);
     this.endDate = endDate;
   }
 
@@ -63,7 +60,6 @@ export class PromoteComponent implements OnInit {
     this.publishedBooksService.updatePublishedBook(updatedBook).subscribe(() => {
       console.log('Book promoted:', updatedBook);
 
-      // Redirigir al usuario a la página de la biblioteca después de la promoción
       this.router.navigate(['/library']);
     });
   }

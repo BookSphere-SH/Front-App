@@ -24,13 +24,11 @@ import {TranslateModule} from "@ngx-translate/core";
 export class PublishBookComponent implements OnInit {
   private _formBuilder = inject(FormBuilder);
 
-  // Instancia de la entidad PublishedBook
   newPublishedBook: PublishedBook = new PublishedBook();
 
   constructor(private publishedBooksService: PublishedBooksService, private router: Router) {
   }
 
-  // Inicialización del componente
   ngOnInit(): void {}
 
   firstFormGroup = this._formBuilder.group({
@@ -59,6 +57,4 @@ export class PublishBookComponent implements OnInit {
       });
     });
   }
-
-  protected readonly PublishedBook = PublishedBook;
 }

@@ -1,6 +1,6 @@
 /* Contenedor para la portada */
 .upload-container {
-  width: 500px; /* Deja que ocupe todo el espacio disponible del contenedor */
+  width: 500px;
   height: 500px;
   display: flex;
   flex-direction: column;

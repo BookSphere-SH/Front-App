@@ -31,7 +31,6 @@ export class StatisticsPublishedBookComponent implements OnInit {
     this.publishedBooksService.getPublishedBookById(bookId).subscribe((book: PublishedBook) => {
       this.publishedBook = book;
 
-      // Verificamos si se encuentran datos para la creación de gráficos estadísticos
       if (book.statistics.length > 0) {
         this.loadCharts(book);
       } else {

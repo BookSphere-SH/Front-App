@@ -13,7 +13,7 @@ export class PromotionService {
   // Simular la obtención de una promoción
   getPromotion(id: number): Observable<PromotionItem> {
     const promotion = this.promotions.find(promo => promo.id === id);
-    return of(promotion!); // Retorna el resultado como observable
+    return of(promotion!);
   }
 
   // Activar una promoción

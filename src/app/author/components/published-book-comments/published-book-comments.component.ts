@@ -48,11 +48,11 @@ export class PublishedBookCommentsComponent implements OnInit {
   enviarRespuesta(comment: any): void {
     if (comment.respuesta && comment.respuesta.trim()) {
       if (!comment.respuestas) {
-        comment.respuestas = []; // Inicializa el arreglo si no existe
+        comment.respuestas = [];
       }
-      comment.respuestas.push(comment.respuesta); // Añade la respuesta al arreglo
-      comment.respuesta = ''; // Limpia el campo de respuesta
-      comment.mostrandoRespuesta = false; // Oculta la caja de respuesta después de enviar
+      comment.respuestas.push(comment.respuesta);
+      comment.respuesta = '';
+      comment.mostrandoRespuesta = false;
     } else {
       alert("Please write a response before submitting.");
     }
@@ -61,7 +61,7 @@ export class PublishedBookCommentsComponent implements OnInit {
   // Método para reportar un comentario
   reportarComentario(comment: any): void {
     const dialogRef = this.dialog.open(ReportCommentComponent, {
-      width: '400px',  // Puedes ajustar el tamaño
+      width: '400px',
       data: {
         commentContent: comment.content
       }
@@ -81,7 +81,7 @@ export class PublishedBookCommentsComponent implements OnInit {
     if (confirmacion && this.publishedBook?.comments) {
       const index = this.publishedBook.comments.indexOf(comment);
       if (index > -1) {
-        this.publishedBook.comments.splice(index, 1);  // Elimina el comentario de la lista
+        this.publishedBook.comments.splice(index, 1);
         console.log('Comment deleted.');
       }
     }

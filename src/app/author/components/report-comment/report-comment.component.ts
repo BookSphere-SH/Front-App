@@ -19,7 +19,7 @@ import { MatInput } from "@angular/material/input";
 
 export class ReportCommentComponent {
   selectedReason: string = '';
-  personalizedReason: string = ''; // Para almacenar la razón personalizada
+  personalizedReason: string = '';
 
   constructor(private dialogRef: MatDialogRef<ReportCommentComponent>) {
   }
@@ -33,7 +33,6 @@ export class ReportCommentComponent {
     }
 
     if (reason) {
-      // Simulación de envío del reporte
       this.dialogRef.close(reason);
     } else {
       alert("Please select or specify a reason.");

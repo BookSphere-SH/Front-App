@@ -13,7 +13,7 @@ export class SelectFormatPublishedBookComponent {
 
   @Output() formatSelectedEmitter = new EventEmitter<string[]>();
 
-  // Función para alternar la selección de formatos
+  // Método para alternar la selección de formatos
   toggleFormat(format: string, event: Event) {
     const checkbox = event.target as HTMLInputElement;
 
@@ -39,7 +39,6 @@ export class SelectFormatPublishedBookComponent {
     const input = event.target as HTMLInputElement;
     if (input.files && input.files[0]) {
       console.log('Digital file selected:', input.files[0]);
-      // Aquí puedes manejar el archivo subido
     }
   }
 

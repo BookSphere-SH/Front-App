@@ -17,7 +17,7 @@ h3 {
 
 /* Estilo para los checkboxes */
 .checkbox-container label {
-  font-size: 18px; /* Aumentar el tamaño del texto */
+  font-size: 18px;
   margin: 0 10px;
   color: #555;
   cursor: pointer;
@@ -32,13 +32,13 @@ h3 {
 
 /* Estilo cuando el checkbox está seleccionado */
 .checkbox-container input[type="checkbox"]:checked {
-  background-color: #d2b48c; /* Color marrón claro */
-  border: 2px solid #8b4513; /* Borde marrón oscuro */
+  background-color: #d2b48c;
+  border: 2px solid #8b4513;
 }
 
 /* Estilo para los mensajes */
 .Select-formats p {
-  font-size: 18px; /* Aumentar el tamaño del texto */
+  font-size: 18px;
   color: #444;
   margin-top: 10px;
 }
@@ -51,13 +51,13 @@ h3 {
 
 /* Estilo para la etiqueta del archivo */
 .labelFile {
-  font-size: 16px; /* Tamaño de la letra de la etiqueta */
+  font-size: 16px;
   color: #666;
 }
 
 /* Estilo del botón para subir archivo */
 .inputFile {
-  font-size: 16px; /* Aumentar el tamaño del texto del botón de archivo */
+  font-size: 16px;
   padding: 8px;
 }
 

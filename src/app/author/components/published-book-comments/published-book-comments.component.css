@@ -1,6 +1,6 @@
 /* Estilos para la sección de comentarios */
 .comments-section {
-  margin-top: 2rem; /* Separación superior */
+  margin-top: 2rem;
 }
 
 /* Estilos para cada comentario (card) */
@@ -13,7 +13,7 @@
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
-  word-wrap: break-word; /* Evita que el texto se desborde en pantallas pequeñas */
+  word-wrap: break-word;
 }
 
 /* Estilo para el título del comentario (nombre del usuario) */
@@ -31,12 +31,12 @@
   position: absolute;
   top: 10px;
   right: 10px;
-  z-index: 10; /* Asegura que el ícono esté por encima del contenido */
+  z-index: 10;
 }
 
 /* Estilo para el botón Eliminate */
 .eliminate-button {
-  color: red; /* Cambia el color del texto a rojo */
+  color: red;
 }
 
 .eliminate-icon {
@@ -51,7 +51,7 @@
 }
 
 .button-answer {
-  align-self: flex-start; /* El botón de respuesta estará alineado a la izquierda */
+  align-self: flex-start;
   margin-top: 1rem;
   background-color: #e4864f;
   color: white;
@@ -63,7 +63,7 @@
 }
 
 .button-answer:hover {
-  background-color: #e04e0b; /* Cambia el color en hover */
+  background-color: #e04e0b;
 }
 
 /* Estilo para la caja de texto de respuesta */
