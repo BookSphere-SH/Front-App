@@ -1,98 +1,78 @@
 import {Component, OnInit} from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
+import { MatTableModule } from '@angular/material/table';
 import { ActivatedRoute } from "@angular/router";
-import { Chart, registerables } from "chart.js";
 import { PublishedBooksService } from "../../services/published-books.service";
 import { PublishedBook } from "../../model/published-book.entity";
 import { TranslateModule } from "@ngx-translate/core";
 
+interface BookStatistics {
+  week: number;
+  interestedReaders: number;
+  physicalPurchases: number;
+  digitalDownloads: number;
+}
+
 @Component({
   selector: 'app-statistics-published-book',
   standalone: true,
-  imports: [
-    TranslateModule
-  ],
+  imports: [MatTableModule, CurrencyPipe, TranslateModule],
   templateUrl: './statistics-published-book.component.html',
   styleUrl: './statistics-published-book.component.css'
 })
+
 export class StatisticsPublishedBookComponent implements OnInit {
-  publishedBook: PublishedBook | undefined;
+  displayedColumns: string[] = ['week', 'interestedReaders', 'physicalPurchases', 'digitalDownloads'];
+  bookId: number = 0;
+  book: any;
+  bookStatistics: BookStatistics[] = [];
+  totalInterestedReaders: number = 0;
+  totalPhysicalPurchases: number = 0;
+  totalDigitalDownloads: number = 0;
 
-  constructor(private route: ActivatedRoute, private publishedBooksService: PublishedBooksService)
-  {
-    Chart.register(...registerables);
-  }
+  constructor(
+    private route: ActivatedRoute,
+    private publishedBooksService: PublishedBooksService
+  ) {}
 
-  ngOnInit() {
-    const bookId = Number(this.route.snapshot.paramMap.get('id'));
-    this.getBookDetails(bookId);
-  }
+  ngOnInit(): void {
+    // Obtener el ID del libro desde la ruta
+    this.bookId = Number(this.route.snapshot.paramMap.get('id'));
 
-  getBookDetails(bookId: number): void {
-    this.publishedBooksService.getPublishedBookById(bookId).subscribe((book: PublishedBook) => {
-      this.publishedBook = book;
-
-      if (book.statistics.length > 0) {
-        this.loadCharts(book);
-      } else {
-        console.warn('No hay estadísticas disponibles para este libro.');
-      }
+    // Obtener los datos del libro a partir del servicio
+    this.publishedBooksService.getPublishedBookById(this.bookId).subscribe((book: any) => {
+      this.book = book;
+      console.log(this.book);  // Verifica los datos aquí
+      this.loadWeeklyStatistics();
     });
   }
 
-  loadCharts(book: PublishedBook): void {
-    const readersData = book.statistics[0].interestedReaders;
-    const purchasesData = book.statistics[0].physicalPurchases;
-    const downloadsData = book.statistics[0].digitalDownloads;
+  loadWeeklyStatistics(): void {
+    if (this.book && this.book.statistics && this.book.statistics.length > 0) {
+      const statistics = this.book.statistics[0];  // Tomamos el primer set de estadísticas
 
-    console.log('Interested Readers:', readersData);
-    console.log('Physical Purchases:', purchasesData);
-    console.log('Digital Downloads:', downloadsData);
+      const weeks = statistics.interestedReaders.length;
 
-    // Gráfico de barras de lectores interesados
-    new Chart('readersChart', {
-      type: 'bar',
-      data: {
-        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-        datasets: [{
-          label: 'Number of Interested Readers',
-          data: readersData,
-          backgroundColor: 'rgba(120, 194, 83, 0.8)'
-        }]
-      },
-      options: {
-        scales: {
-          y: {beginAtZero: true}
-        }
+      for (let i = 0; i < weeks; i++) {
+        this.bookStatistics.push({
+          week: i + 1,  // Número de semana
+          interestedReaders: statistics.interestedReaders[i] || 0,
+          physicalPurchases: statistics.physicalPurchases[i] || 0,
+          digitalDownloads: statistics.digitalDownloads[i] || 0
+        });
       }
-    });
 
-    // Gráfico de lineas de compras y descargas (formatos fisico y digital)
-    new Chart('purchasesAndDownloadsChart', {
-      type: 'line',
-      data: {
-        labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
-        datasets: [
-          {
-            label: 'Number of Purchases (Physical)',
-            data: purchasesData,
-            borderColor: 'rgba(153, 102, 255, 1)',
-            fill: false,
-            tension: 0.1
-          },
-          {
-            label: 'Number of Downloads (Digital)',
-            data: downloadsData,
-            borderColor: 'rgba(255, 159, 64, 1)',
-            fill: false,
-            tension: 0.1
-          }
-        ]
-      },
-      options: {
-        scales: {
-          y: {beginAtZero: true}
-        }
-      }
-    });
+      // Calcular totales
+      this.totalInterestedReaders = statistics.interestedReaders.reduce((acc: number, val: number) => acc + val, 0);
+      this.totalPhysicalPurchases = statistics.physicalPurchases.reduce((acc: number, val: number) => acc + val, 0);
+      this.totalDigitalDownloads = statistics.digitalDownloads.reduce((acc: number, val: number) => acc + val, 0);
+
+      // Verifica el contenido de bookStatistics
+      console.log(this.bookStatistics);  // Agrega este log para ver los datos llenados
+    } else {
+      console.log('No statistics available');
+    }
   }
+
+  protected readonly PublishedBook = PublishedBook;
 }

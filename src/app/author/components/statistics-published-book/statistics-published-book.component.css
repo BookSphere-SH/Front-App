@@ -1,18 +1,16 @@
-.statistics-container {
-  max-width: 800px;
-  margin: 30px auto;
+.statistics-title {
+  margin-top: 20px;
 }
 
-.title {
-  text-align: center;
+table {
+  width: 100%;
 }
 
-.interested-readers-chart-container {
-  margin: 60px 0;
-  text-align: center;
+tr.mat-footer-row {
+  font-weight: bold;
+  background-color: #f5f5f5;
 }
 
-.purchases-downloads-chart-container {
-  margin: 60px 0;
-  text-align: center;
+.total-row {
+  font-weight: bold;
 }

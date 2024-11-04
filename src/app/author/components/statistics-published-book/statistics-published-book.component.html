@@ -1,14 +1,42 @@
-<div class="statistics-container">
-  <h2 class="title"><strong>{{ 'statisticsBook.statisticsTitle' | translate }} {{ publishedBook?.titulo }}</strong></h2>
-
-  <!-- Gráfico de barras de lectores interesados -->
-  <div class="interested-readers-chart-container">
-    <canvas id="readersChart"></canvas>
-  </div>
-
-  <!-- Gráfico de lineas de compras y descargas (formatos fisico y digital) -->
-  <div class="purchases-downloads-chart-container">
-    <canvas id="purchasesAndDownloadsChart"></canvas>
-  </div>
+<div class="statistics-title">
+  <h2><strong>Book Statistics:</strong></h2>
 </div>
+<br>
 
+<div>
+  <table mat-table [dataSource]="bookStatistics.length > 0 ? bookStatistics : [{ week: 1, interestedReaders: 0, physicalPurchases: 0, digitalDownloads: 0 }]" class="mat-elevation-z8">
+    <!-- Week Column -->
+    <ng-container matColumnDef="week">
+      <th mat-header-cell *matHeaderCellDef> {{ 'statistics.week' | translate }} </th>
+      <td mat-cell *matCellDef="let stat"> {{stat.week}} </td>
+      <td mat-footer-cell *matFooterCellDef class="total-row"> {{ 'statistics.total' | translate }} </td>
+    </ng-container>
+
+    <!-- Interested Readers Column -->
+    <ng-container matColumnDef="interestedReaders">
+      <th mat-header-cell *matHeaderCellDef> {{ 'statistics.interestedReaders' | translate }} </th>
+      <td mat-cell *matCellDef="let stat"> {{stat.interestedReaders}} </td>
+      <td mat-footer-cell *matFooterCellDef> {{totalInterestedReaders}} </td>
+    </ng-container>
+
+    <!-- Physical Purchases Column -->
+    <ng-container matColumnDef="physicalPurchases">
+      <th mat-header-cell *matHeaderCellDef> {{ 'statistics.physicalPurchases' | translate }} </th>
+      <td mat-cell *matCellDef="let stat"> {{stat.physicalPurchases}} </td>
+      <td mat-footer-cell *matFooterCellDef> {{totalPhysicalPurchases}} </td>
+    </ng-container>
+
+    <!-- Digital Downloads Column -->
+    <ng-container matColumnDef="digitalDownloads">
+      <th mat-header-cell *matHeaderCellDef> {{ 'statistics.digitalDownloads' | translate }} </th>
+      <td mat-cell *matCellDef="let stat"> {{stat.digitalDownloads}} </td>
+      <td mat-footer-cell *matFooterCellDef> {{totalDigitalDownloads}} </td>
+    </ng-container>
+
+    <!-- Header and Rows -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <!-- Footer with Totals -->
+    <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+  </table>
+</div>
