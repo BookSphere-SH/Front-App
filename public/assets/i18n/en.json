@@ -85,7 +85,12 @@
     "endDate": "End Date",
     "promoteButton": "Promote"
   },
-  "statisticsBook": {
-    "statisticsTitle": "Book Statistics"
+  "statistics": {
+    "statisticsTitle": "Book Statistics",
+    "week": "Week",
+    "total": "Total",
+    "interestedReaders": "Interested Readers",
+    "physicalPurchases": "Physical Purchases",
+    "digitalDownloads": "Digital Downloads"
   }
 }
