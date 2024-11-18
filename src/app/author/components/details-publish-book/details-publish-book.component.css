@@ -1,0 +1,11 @@
+/* Contenedor del formulario de detalles del libro */
+.published-book-info {
+  width: 400px; /* Ocupa todo el espacio disponible en el contenedor */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin-right: 80px;
+  padding-top: 20px;
+}
+
+

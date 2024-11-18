@@ -1,0 +1,19 @@
+<!-- Sección de comentarios -->
+<div>
+  <div class="comments-section mt-5">
+    <h3>Comentarios de los usuarios</h3>
+
+    <!-- Listar comentarios -->
+    <div *ngFor="let comment of publishedBook?.comments" class="comment-card mt-3 p-3 border rounded">
+      <h5>{{ comment.username }}</h5>
+      <p><strong>Fecha:</strong> {{ comment.date | date:'medium' }}</p>
+      <p><strong>Comentario:</strong> {{ comment.content }}</p>
+      <p><strong>Calificación:</strong> {{ comment.rating }}/5</p>
+    </div>
+
+    <!-- Si no hay comentarios -->
+    <div *ngIf="publishedBook?.comments.length === 0" class="alert alert-info mt-3">
+      No hay comentarios disponibles para este libro.
+    </div>
+  </div>
+</div>

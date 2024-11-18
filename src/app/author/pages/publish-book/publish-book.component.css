@@ -1,0 +1,32 @@
+/* Contenedor principal para ambos componentes */
+.container {
+  display: flex;
+  justify-content: space-between; /* Distribuye los elementos hijos */
+  align-items: flex-start; /* Alinea los componentes en la parte superior */
+  gap: 20px; /* Espacio entre el contenedor de la imagen y el formulario */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+/* Estilo para centrar el botón Next */
+.button-next {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button-container-2 {
+  position: fixed;
+  bottom: 20px;
+  display: flex;
+  left: 50%; /* Coloca el elemento en el centro horizontal */
+  transform: translateX(-50%); /* Ajusta para que el centro del contenedor coincida con el centro de la pantalla */
+  justify-content: center;
+  gap: 10px; /* Espacio entre los botones */
+}
+
+/* Cambia el color al pasar el mouse por encima
+.button-container-2 button:hover {
+  background-color: #3700b3;
+}*/
