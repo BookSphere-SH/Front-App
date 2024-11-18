@@ -1,4 +1,4 @@
-
+// src/app/shared/services/profile.service.ts
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -6,26 +6,27 @@ import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class ProfileService {
   private apiUrl = '../../../../../server/db.json';  // Adjusted path to point to the parent directory
 
   constructor(private http: HttpClient) {}
 
-  getUsers(): Observable<any> {
+  getProfiles(): Observable<any> {
     return this.http.get(`${this.apiUrl}`);
   }
 
-  getUserById(_id: number): Observable<any> {
+  getProfileById(_id: number): Observable<any> {
     return this.http.get(`${this.apiUrl}`);
   }
 
-  registerUser(user: any): Observable<any> {
-    return this.http.post(this.apiUrl, user);
+  registerProfile(profile: any): Observable<any> {
+    return this.http.post(this.apiUrl, profile);
   }
 
-  updateUser(_id: number, user: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}`, user);
+  updateProfile(_id: number, profile: any): Observable<any> {
+    return this.http.put(`${this.apiUrl}`, profile);
   }
+
   getByNameQuery(name: string): Observable<any> {
     return this.http.get(`${this.apiUrl}?name=${name}`);
   }

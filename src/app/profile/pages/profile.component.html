@@ -1,48 +1,26 @@
 <div *ngIf="profile">
-  <!-- Author Profile -->
-  <div class="profile-container" *ngIf="isAuthor">
-    <main>
-    <h2>{{ profile.name }}</h2>
-    <p><strong>Registered since:</strong> {{ profile.registerDate }}</p>
-    <p><strong>Birthday:</strong> {{ profile.birthday }}</p>
-    <p><strong>Gender:</strong> {{ profile.gender }}</p>
-    <p><strong>Favorite Book:</strong> {{ profile.favoriteBook }}</p>
-    <p><strong>Email:</strong> {{ profile.email }}</p>
-    <p><strong>Description:</strong> {{ profile.description }}</p>
-    <p><strong>Publisher:</strong> {{ profile.publisher }}</p>
-
-    <h3>Books:</h3>
-    <ul>
-      <li *ngFor="let book of profile.books">{{ book }}</li>
-    </ul>
-      <button (click)="toggleEdit()">Edit Profile</button>
-    </main>
-
-
-  </div>
-
   <!-- User Profile -->
-  <div class="profile-container" *ngIf="!isAuthor">
+  <div class="profile-container">
     <main>
-    <h2>{{ profile.name }}</h2>
-    <p><strong>Registered since:</strong> {{ profile.registerDate }}</p>
-    <p><strong>Birthday:</strong> {{ profile.birthday }}</p>
-    <p><strong>Gender:</strong> {{ profile.gender }}</p>
-    <p><strong>Favorite Book:</strong> {{ profile.favoriteBook }}</p>
-    <p><strong>Email:</strong> {{ profile.email }}</p>
-    <p><strong>Description:</strong> {{ profile.description }}</p>
+      <h2>{{ profile.name }}</h2>
+      <p><strong>Registered since:</strong> {{ profile.registerDate }}</p>
+      <p><strong>Birthday:</strong> {{ profile.birthday }}</p>
+      <p><strong>Gender:</strong> {{ profile.gender }}</p>
+      <p><strong>Favorite Book:</strong> {{ profile.favoriteBook }}</p>
+      <p><strong>Email:</strong> {{ profile.email }}</p>
+      <p><strong>Description:</strong> {{ profile.description }}</p>
 
-    <h3>Library:</h3>
-    <ul>
-      <li *ngFor="let book of profile.library">{{ book }}</li>
-    </ul>
+      <h3>Library:</h3>
+      <ul>
+        <li *ngFor="let book of profile.library">{{ book }}</li>
+      </ul>
     </main>
     <button (click)="toggleEdit()">Edit Profile</button>
   </div>
 
   <!-- Profile Editing Form -->
   <form class="profile-container" *ngIf="isEditing" (ngSubmit)="saveProfile()">
-    <h2>Edit {{ isAuthor ? 'Author' : 'User' }} Profile</h2>
+    <h2>Edit Profile</h2>
 
     <label for="name">Name:</label>
     <input type="text" id="name" [(ngModel)]="profile.name" name="name" required />
@@ -57,19 +35,18 @@
     <input type="text" id="gender" [(ngModel)]="profile.gender" name="gender" required />
 
     <label for="description">Description:</label>
-    <input type="text" id="description" [(ngModel)]="profile.description" name="description"  />
+    <input type="text" id="description" [(ngModel)]="profile.description" name="description" />
 
     <button type="submit">Save</button>
     <button type="button" (click)="toggleEdit()">Cancel</button>
   </form>
-
 </div>
+
 <div class="search-container">
   <input type="text" [(ngModel)]="searchQuery" placeholder="Search by name" />
   <button (click)="searchByName()">Search</button>
 </div>
+
 <footer>
   <p>&copy; 2024 Book Sphere. All rights reserved.</p>
 </footer>
-
-
