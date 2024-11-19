@@ -27,5 +27,6 @@ export const routes: Routes = [
   { path: 'library', component: LibraryComponent},
   { path: 'books/:id', component: BookDetailsComponent },
   { path: '', redirectTo: 'store/store-books', pathMatch: 'full' },
-  { path: '**', component: PageNotFoundComponent }
+  { path: '**', component: PageNotFoundComponent },
+  { path: 'profile', component: ProfileComponent}
 ];

@@ -1,23 +1,57 @@
 {
-  "filter": {
-    "label": "Filter",
-    "placeholder": "Enter text to filter"
+  "PAGE_NOT_FOUND": {
+    "TITLE": "Oops! This page doesn't exist.",
+    "MESSAGE": "It looks like the page you're looking for is not available.",
+    "INSTRUCTION": "Don't worry, you can return to the store and continue browsing our collection.",
+    "BUTTON_TEXT": "Return to Store"
   },
-  "title": {
-    "students": "Students",
-    "add": "New Student",
-    "edit": "Edit Student"
+  "LANGUAGE_SWITCHER": {
+    "PREFERRED_LANGUAGE": "Preferred Language"
   },
-  "student": {
-    "id": "No.",
-    "name": "Name",
-    "age": "Age",
-    "address": "Address",
-    "actions": "Actions"
+
+  "PROFILE": {
+    "REGISTERED_SINCE": "Registered since:",
+    "BIRTHDAY": "Birthday:",
+    "GENDER": "Gender:",
+    "FAVORITE_BOOK": "Favorite Book:",
+    "EMAIL": "Email:",
+    "DESCRIPTION": "Description:",
+    "LIBRARY": "Library:",
+    "EDIT_PROFILE": "Edit Profile",
+    "EDIT_PROFILE_TITLE": "Edit Profile",
+    "NAME": "Name:",
+    "SAVE": "Save",
+    "CANCEL": "Cancel",
+    "SEARCH_PLACEHOLDER": "Search by name",
+    "SEARCH": "Search"
   },
-  "footer": {
-    "rights": "Copyright © 2024 {{ api }}, All rights reserved",
-    "intro": "Developed ",
-    "author": "by {{ team }} Team"
+  "PAYMENT": {
+    "EMPTY_CART_MESSAGE": "Your cart is empty.",
+    "PAYMENT_SUCCESS_MESSAGE": "Payment has been successfully processed!",
+    "PAGE_TITLE": "Payment Process",
+    "PRICE": "Price:",
+    "FORMAT_LABEL": "Format:",
+    "FORMAT_PHYSICAL": "Physical",
+    "FORMAT_DIGITAL": "Digital",
+    "PAYMENT_OPTIONS_TITLE": "Payment Options",
+    "PAYMENT_METHOD_LABEL": "Payment Method:",
+    "PAYMENT_METHOD_CREDIT_CARD": "Credit Card",
+    "PAYMENT_METHOD_BANK_TRANSFER": "Bank Transfer",
+    "CREDIT_CARD_DETAILS_TITLE": "Enter your card details",
+    "CREDIT_CARD_NUMBER_LABEL": "Card Number",
+    "CREDIT_CARD_EXPIRATION_LABEL": "Expiration Date",
+    "CREDIT_CARD_CVV_LABEL": "Security Code (CVV)",
+    "BANK_TRANSFER_INSTRUCTIONS_TITLE": "Bank Transfer Instructions",
+    "BANK_TRANSFER_ACCOUNT_NUMBER": "Make the transfer to the following account number:",
+    "BANK_TRANSFER_EMAIL": "Send the receipt to:",
+    "SHIPPING_DETAILS_TITLE": "Shipping Details",
+    "SHIPPING_ADDRESS_PLACEHOLDER": "Address",
+    "SHIPPING_CITY_PLACEHOLDER": "City",
+    "SHIPPING_COUNTRY_PLACEHOLDER": "Country",
+    "SHIPPING_POSTAL_CODE_PLACEHOLDER": "Postal Code",
+    "PAY_BUTTON": "Pay"
+  },
+  "FOOTER": {
+    "COPYRIGHT": "copy; 2024 Book Sphere. All rights reserved."
   }
 }

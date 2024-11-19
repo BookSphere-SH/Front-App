@@ -1,23 +1,58 @@
 {
-  "filter": {
-    "label": "Filtrar",
-    "placeholder": "Digite texto a filtrar"
+  "PAGE_NOT_FOUND": {
+    "TITLE": "¡Vaya! Esta página no existe.",
+    "MESSAGE": "Parece que la página que buscas no está disponible.",
+    "INSTRUCTION": "No te preocupes, puedes volver a la tienda y seguir navegando por nuestra colección.",
+    "BUTTON_TEXT": "Volver a la tienda"
   },
-  "title": {
-    "students": "Estudiantes",
-    "add": "Nuevo estudiante",
-    "edit": "Editar estudiante"
+  "LANGUAGE_SWITCHER": {
+    "PREFERRED_LANGUAGE": "Idioma preferido"
   },
-  "student": {
-    "id": "Núm.",
-    "name": "Nombre",
-    "age": "Edad",
-    "address": "Dirección",
-    "actions": "Acciones"
+
+
+  "PROFILE": {
+    "REGISTERED_SINCE": "Registrado desde:",
+    "BIRTHDAY": "Cumpleaños:",
+    "GENDER": "Género:",
+    "FAVORITE_BOOK": "Libro Favorito:",
+    "EMAIL": "Correo Electrónico:",
+    "DESCRIPTION": "Descripción:",
+    "LIBRARY": "Biblioteca:",
+    "EDIT_PROFILE": "Editar Perfil",
+    "EDIT_PROFILE_TITLE": "Editar Perfil",
+    "NAME": "Nombre:",
+    "SAVE": "Guardar",
+    "CANCEL": "Cancelar",
+    "SEARCH_PLACEHOLDER": "Buscar por nombre",
+    "SEARCH": "Buscar"
   },
-  "footer": {
-    "rights": "Derechos de autor © 2024 {{ api }}, Todos los derechos reservados",
-    "intro": "Desarrollado ",
-    "author": "por el Equipo {{ team }}"
+  "PAYMENT": {
+    "EMPTY_CART_MESSAGE": "Tu carrito está vacío.",
+    "PAYMENT_SUCCESS_MESSAGE": "¡El pago se ha procesado con éxito!",
+    "PAGE_TITLE": "Proceso de pago",
+    "PRICE": "Precio:",
+    "FORMAT_LABEL": "Formato:",
+    "FORMAT_PHYSICAL": "Físico",
+    "FORMAT_DIGITAL": "Digital",
+    "PAYMENT_OPTIONS_TITLE": "Opciones de Pago",
+    "PAYMENT_METHOD_LABEL": "Método de Pago:",
+    "PAYMENT_METHOD_CREDIT_CARD": "Tarjeta de crédito",
+    "PAYMENT_METHOD_BANK_TRANSFER": "Transferencia bancaria",
+    "CREDIT_CARD_DETAILS_TITLE": "Introduce los detalles de tu tarjeta",
+    "CREDIT_CARD_NUMBER_LABEL": "Número de tarjeta",
+    "CREDIT_CARD_EXPIRATION_LABEL": "Fecha de expiración",
+    "CREDIT_CARD_CVV_LABEL": "Código de seguridad (CVV)",
+    "BANK_TRANSFER_INSTRUCTIONS_TITLE": "Instrucciones para transferencia bancaria",
+    "BANK_TRANSFER_ACCOUNT_NUMBER": "Realiza la transferencia al siguiente número de cuenta:",
+    "BANK_TRANSFER_EMAIL": "Envía el comprobante a:",
+    "SHIPPING_DETAILS_TITLE": "Detalles de envío",
+    "SHIPPING_ADDRESS_PLACEHOLDER": "Dirección",
+    "SHIPPING_CITY_PLACEHOLDER": "Ciudad",
+    "SHIPPING_COUNTRY_PLACEHOLDER": "País",
+    "SHIPPING_POSTAL_CODE_PLACEHOLDER": "Código postal",
+    "PAY_BUTTON": "Pagar"
+  },
+  "FOOTER": {
+    "COPYRIGHT": "2024 Book Sphere. Todos los derechos reservados."
   }
 }
