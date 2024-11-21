@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import {map, Observable, of} from 'rxjs';
 import { Book } from '../model/book-entity/book.entity';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BooksService {
-  private apiUrl = 'http://localhost:3000/book';  // Asegúrate de que esta URL sea correcta
+  private apiUrl = 'http://localhost:8090/book';  // Asegúrate de que esta URL sea correcta
   filteredBooks: Book[] = [];  // Aquí almacenamos los libros filtrados
 
   private library: Book[] = [];  // Arreglo para almacenar la biblioteca
@@ -46,5 +46,16 @@ export class BooksService {
   // Guardar la biblioteca en localStorage
   private saveLibrary(): void {
     localStorage.setItem('library', JSON.stringify(this.library));
+  }
+
+  // Filter books by title, author, and category
+  filterBooks(title: string, author: string, category: string): Observable<Book[]> {
+    return this.getAllBooks().pipe(
+      map(books => books.filter(book =>
+        (title ? book.titulo.toLowerCase().includes(title.toLowerCase()) : true) &&
+        (author ? book.autor.toLowerCase().includes(author.toLowerCase()) : true) &&
+        (category ? book.categoria.toLowerCase().includes(category.toLowerCase()) : true)
+      ))
+    );
   }
 }
